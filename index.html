@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+   <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1> TO DO LIST </h1>
+    <div class="newTaskSection"> 
+        <button type="button" id = "newTask" onclick="openToDoForm()">
+        <span class="material-symbols-outlined">
+            add
+            </span>
+        <span> New Task </span>
+        </button>
+        
+  
+        
+    </div>
+    <div class="overlay">
+		<form id = "myform" method = "GET" >
+            
+            <button class="cancel-button" type="button" onclick="cancelForm()">X</button>
+			<h2>Add new todo</h2>
+          
+			<input type="text" id="Category" name="Category" placeholder="Category, Etc: Marketing..."required>
+			<input type="text" id="Title" name="Title" placeholder="Title" required>
+			<textarea id="content" name="content" rows="4" placeholder="Content" required></textarea>
+			<button type="submit" onclick = "add(this.form)">Submit</button>
+			</div>
+		</form>
+	</div>
+    
+    <div class="editOverlay">
+		<form id = "myform" method = "GET" >
+            
+            <button class="cancel-button" type="button" onclick="cancelEditForm()">X</button>
+			<h2>Edit todo</h2>
+            
+          
+			<input type="text" id="editCategory" name="Category" placeholder="Category, Etc: Marketing..."required>
+			<input type="text" id="editTitle" name="Title" placeholder="Title" required>
+			<textarea id="editcontent" name="content" rows="4" placeholder="Content" required></textarea>
+            <div class="wrap">
+                <input type="radio" id="todo" name="opts" value="0" checked> 
+                <span>To do</span>
+                <input type="radio" id="doing" name="opts" value="1"> 
+                <span>Doing</span>
+                <input type="radio" id="finished" name="opts" value="2"> 
+                <span>Finished</span>
+                </div>
+            
+			<button type="submit" onclick = "edit(this.form)">Submit</button>
+			</div>
+		</form>
+	</div>
+    
+
+
+
+
+
+    <div class= "tasks">
+       
+        <div class="todo">
+            <div class="Task-title" style="background-color: #00a5db;">
+           
+                Todo
+            </div>
+            <div class="straightLine"  style="background-color: #00a5db;"> </div>
+            <div class="scroll-box">
+                <div class="scroll-content">
+        </div>
+        </div>
+        </div>
+
+        <div class="doing">
+            <div class="Task-title" style="background-color: #e4d175;">
+           
+                Doing
+            </div>
+            <div class="straightLine"  style="background: #e4d175;"> </div>
+            <div class="scroll-box">
+                <div class="scroll-content">
+        </div>
+        </div>
+        </div>
+        <div class="finished">
+            <div class="Task-title" style="background-color: #3cbf57;">
+            
+                Finished
+            </div>
+            <div class="straightLine" style="background-color: #3cbf57;"> </div>
+            <div class="scroll-box">
+                <div class="scroll-content">
+        </div>
+        </div>
+        </div>
+
+    </div>
+   
+    <script src="script.js" ></script>
+</body>
+</html>
